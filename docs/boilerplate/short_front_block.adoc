@@ -1,0 +1,8 @@
+//
+// Short front page boilerplate, included in each individual specification not using the full form
+// The file global_vars.adoc must be included BEFORE this one in any master doc.
+//
+
+include::doc_id_block.adoc[]
+include::licence_block.adoc[]
+

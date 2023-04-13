@@ -1,0 +1,54 @@
+{
+    "id": "<component id string, e.g. 'PROC'>",
+    "title": "<formal component name, e.g. 'Process Model'>",
+    "description": "<description of component, e.g. 'openEHR Process Model Component'>",
+    "keywords": "<keywords applying to overall component, e.g. 'process model, workflow, pathways, openehr'>",
+    "group": "<component group, as per block diagram; remark: not used yet>",
+    "jira": {
+        "open_issues": "<jira filter id for openissues, i.e '11106'>",
+        "roadmap": "<jira project name, used in the roadmap url, e.g. 'SPECPROC'>"
+    },
+	"releases": [
+		{
+			"id": "<release id, e.g '1.0.0'>",
+			"date": "<an optional date, in the 'YYYY-MM-DD' format; if left empty it mean is not yet released; remark: in the future, this will be read from github>",
+			"jira":  {
+				"crs": "<change request project's version id, e.g. 'SPECPROC/versions/12500'>",
+				"prs": "<problem report project's version id, e.g. 'SPECPR/versions/12501'>"
+			}
+		}
+	],
+    "specifications": [
+        {
+            "id": "<identifier string, e.g. task_planning>",
+            "title": "<title coming below opeEHR logo on front page, e.g. Task Planning (TP) Specification>",
+            "title_short": "<title used in home page box for this spec, e.g. Task Planning (TP)>",
+            "description": "<usually same as title but with 'openEHR' prepended; used for hover on web pages, tab titles in browsers etc, e.g. openEHR Task Planning specification>",
+            "summary": "<used in right-hand column of component index page for this spec, e.g. An adaptive, executable, team-based model of workflow>",
+            "micro_summary": "<used as text in home page box for this spec; usually a shortened version of summary; may be empty.>",
+			"classes": "<optional list of key classes to add under micro-summary; each class would be linked to spec source location>",
+			"copyright_year": "<initial copyright year, e.g. 2017>",
+			"spec_status": "<spec status, i.e. DEVELOPMENT | TRIAL | STABLE | SUPERSEDED | OBSOLETE | ARCHIVED>",
+			"keywords": "<keywords for this spec, should affect search engines>",
+			"notes": [
+				{
+					"link": "<link to a webpage (wikipage)>",
+					"text": "<webpage (wikipage) link name, usually the note page title>"
+				}
+			]
+        }
+    ],
+    "expressions": [
+	    {
+			"id": "<unique id, usually the file name, e.g. 'openEHR_UML-PROC.mdzip'>",
+			"type": "<expression type, i.e uml | file | url; remark: dependent type will be fetched>",
+		    "title": "<expression title, e.g. 'PROC UML'; remark: dependent title will be fetched>",
+		    "description": "<expression description, e.g. 'MagicDraw 18.5 UML file for PROC 1.0'; remark: dependent description will be fetched>",
+			"link": "<expression url link, only for expressions that not part of a component repository, i.e. a webpage or a wikipage link; remark: dependent link will be fetched>",
+			"dependency": {
+				"component": "<component id (name), e.g. 'BASE'; remark: if 'dependency' is filled in, the type, title, link and description will be imported from target>",
+				"release": "<release id (e.g. '1.1.0') or 'latest'>"
+			}
+		}
+	]
+}

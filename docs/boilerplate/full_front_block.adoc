@@ -1,0 +1,10 @@
+//
+// Full front page boilerplate, included in each individual specification
+// The file global_vars.adoc must be included BEFORE this one in any master doc.
+//
+:xrefstyle: basic
+include::doc_id_block.adoc[]
+//image::openehr_block_diagram.svg["openEHR components",align="center",width="60%"]
+//image::openehr_block_diagram.svg["openEHR components",align="center",width="60%",opts=interactive]
+include::licence_block.adoc[]
+:xrefstyle: short

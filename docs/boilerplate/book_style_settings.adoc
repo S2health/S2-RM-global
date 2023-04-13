@@ -1,0 +1,18 @@
+//
+// Short front page boilerplate, included in each individual specification not using the full form
+// The file global_vars.adoc must be included BEFORE this one in any master doc.
+//
+
+include::basic_style_settings.adoc[]
+
+:toc: left
+:toclevels: 4
+:sectnums!:
+:sectnumlevels: 4
+:chapter-refsig: Section
+:xrefstyle: short
+
+// ==== asciidoctor-bibtex settings
+// Location of .bib file is given on command line
+:bibtex-style: apa-5th-edition
+:bibtex-throw: true
