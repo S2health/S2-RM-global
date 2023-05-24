@@ -5,7 +5,24 @@
 :apache_licence_text: Apache 2.0 Licence.
 :apache_licence_url: http://apache.org/licenses/LICENSE-2.0.html
 
-// sites
+// Graphite
+:product_name: Graphite
+:graphite_platform: http://graphitehealth.io
+:graphite_website_url: http://graphitehealth.io
+:graphite_specs: https://specifications.graphitehealth.io
+:graphite_specifications_forum: https://specifications.graphitehealth.io
+
+//
+// ========= Jira =========
+// links defined here are reprocessed in Nginx/Apache
+//
+:graphite_jira_home: {graphite_specs}/jira
+:graphite_prs: {graphite_jira_home}/projects/SPECPR
+:component_roadmap: {graphite_specs}/components/{component}/roadmap
+:component_history: {graphite_specs}/components/{component}/history
+:component_prs: {graphite_specs}/components/{component}/open_issues
+
+// openEHR sites
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
 :openehr_forums_site: https://discourse.openehr.org
@@ -60,17 +77,6 @@
 :openehr_wiki: {openehr_wiki_root}/spacedirectory/view.action
 :openehr_wiki_adl_space: {openehr_wiki_root}/spaces/ADL
 
-//
-// ========= Jira =========
-// links defined here are reprocessed in Nginx/Apache
-//
-:openehr_jira_home: {openehr_specs}/jira
-:openehr_prs: {openehr_jira_home}/projects/SPECPR
-:component_roadmap: {openehr_specs}/components/{component}/roadmap
-:component_history: {openehr_specs}/components/{component}/history
-:component_prs: {openehr_specs}/components/{component}/open_issues
-:adl_workbench_prs: {openehr_jira_home}/AWBPR
-:adl_workbench_dev: {openehr_jira_home}/AWB
 
 // URI for any issue, mapped to /jira/browse/<issue> in Apache rewrites
 // Second var is legacy name

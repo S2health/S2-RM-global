@@ -3,12 +3,12 @@
 //
 [cols="^1,4", options="header"]
 |===
-2+^|(C) {current_year} The openEHR Foundation
+2+^|(C) {current_year} Graphite Platforms
 
 2+^|{openehr_website_url}[Graphite Platform Publishing^] is an independent, non-profit foundation.
 
 |*Issuer*
-|{openehr_software_program}[Graphite Platform Publishing^]
+|{graphite_platform}[Graphite Platforms^]
 
 |*Keywords*
 |{keywords}
@@ -17,6 +17,6 @@
 |image:{apache_licence_img}[width=15%] {apache_licence_text} {apache_licence_url}
 
 |*Support*
-|Issues: {component_prs}[Problem Reports^]
+|Issues: {component_prs}[Report an Issue^]
 
 |===
