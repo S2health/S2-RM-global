@@ -322,10 +322,14 @@
 :ro: https://obofoundry.org/ontology/ro.html
 :fma: http://sig.biostr.washington.edu/projects/fm/
 :iao:  https://bioportal.bioontology.org/ontologies/IAO
+
 :snomed: http://www.snomed.org
 :ihtsdo: {snomed}
 :snomed_ct: {snomed}
-:snomed_uris: https://confluence.ihtsdotools.org/display/DOCURI/URI+Standard
+:snomed_doc_home: {https://confluence.ihtsdotools.org/display}
+:snomed_uris: {snomed_doc_home}/DOCURI/URI+Standard
+:snomed_comp_grammar: {snomed_doc_home}/DOCSCG/Compositional+Grammar+-+Specification+and+Guide
+
 :linkehr: http://linkehr.com 
 :loinc: http://loinc.org
 :obo: http://www.obofoundry.org/
