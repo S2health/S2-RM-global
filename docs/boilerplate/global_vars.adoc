@@ -96,6 +96,8 @@
 :term_release: latest
 :lang_release: latest
 :base_release: latest
+:gcm_release: latest
+
 :rm_release: latest
 :am_release: latest
 :sm_release: latest

@@ -31,6 +31,21 @@
 
 // --------------- GCM ----------------
 
+:graphite_gcm_releases: {graphite_specs}/releases/GCM/{gcm_release}
+
+:graphite_gcm_ehr: {graphite_gcm_releases}/ehr.html
+:graphite_gcm_entry: {graphite_gcm_releases}/entry.html
+:graphite_gcm_integration: {graphite_gcm_releases}/integration.html
+:graphite_gcm_data_structures: {graphite_gcm_releases}/data_structures.html
+:graphite_gcm_data_entity: {graphite_gcm_releases}/entity.html
+
+// for link in preface part of docs
+:graphite_gcm_latest: {graphite_specs}/releases/GCM/latest
+:graphite_gcm_latest_ehr: {graphite_gcm_latest}/ehr.html
+:graphite_gcm_latest_entry: {graphite_gcm_latest}/entry.html
+:graphite_gcm_latest_integration: {graphite_gcm_latest}/integration.html
+:graphite_gcm_latest_data_structures: {graphite_gcm_latest}/data_structures.html
+:graphite_gcm_latest_data_entity: {graphite_gcm_latest}/entity.html
 
 // ================== OPENEHR ===================
 
