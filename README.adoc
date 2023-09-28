@@ -1,10 +1,10 @@
-= GPS-global
+= S2-global
 
-Global definitions, documents and scripts for openEHR
+Global definitions, documents and scripts for S2
 
 == How to set up the Asciidoctor publishing environment for the specifications
 
-NOTE: a Linux-like environment is assumed; cygwin under Windows will work fine.
+NOTE: a Linux-like environment is assumed; cygwin under Windows will also work.
 
 NOTE: in the below, you may be doing direct clone + modify master or other branch; if you are not, you will most likely be cloning forked copies and doing pull requests in the usual way. From the point of view of publishing with Asciidoctor, there is no difference.
 
@@ -32,15 +32,15 @@ If you installed MagicDraw, you will also need to install the openEHR https://gi
 Now you need to clone the openEHR specifications repos, as follows:
 
 1. Create a directory `Graphite` or similar to contain the specifications git repo clones
-2. Download https://github.com/GraphiteHealth/GPS-global/blob/master/bin/setup_openehr_git.sh[the bash script /bin/setup_openehr_git.sh^] into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
+2. Download https://github.com/GraphiteHealth/S2-global/blob/master/bin/setup_openehr_git.sh[the bash script /bin/setup_openehr_git.sh^] into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
 
 You are now ready to go. From the parent directory, in a bash shell, type:
 
 ----
-$ ./do_spec_publish -r GCM
+$ ./do_spec_publish -r RM
 ----
 
-This will publish the HTML documents for the RM component in `GPS-GCM/docs`. You can do the same for any other component, e.g. BASE, QUERY etc.
+This will publish the HTML documents for the RM component in `S2-RM/docs`. You can do the same for any other component, e.g. BASE, QUERY etc.
 
 To find out what else you can do, type:
 
@@ -52,12 +52,12 @@ Whenever you want to publish changes made over time at some later date, re-run `
 
 == How to do a Release of a Component
 
-Components, i.e. GPS, AM, LANG, PROC etc are the units of release. Each component has its own Github repo. A release is _always named_ either:
+Components, i.e. RM, BASE etc are the units of release. Each component has its own Github repo. A release is _always named_ either:
 
 * `Release-N.N.N`, where `N.N.N` is a semver-style 3-part release id, e.g. `1.2.14`, OR
 * `Release-N.N.NvN`, where the trailing `vN` identifies a new version of the existing release `Release-N.N.N` (see below)
 
-To do a release of a component, e.g. 'RM Release-1.0,4', the following steps are required.
+To do a release of a component, e.g. 'RM Release-1.0.0', the following steps are required.
 
 === Jira
 
@@ -87,9 +87,9 @@ Sometimes all the above work is performed, and then someone discovers a signific
 
 * check out the relevant release branch (see above); any changes you now make are on that branch.
 * make the changes you need to the source files;
-* republish using `./do_spec_publish` with the original release id, e.g. `./do_spec_publish -r -l Release-1.0.4`;
+* republish using `./do_spec_publish` with the original release id, e.g. `./do_spec_publish -r -l Release-1.0.0`;
 * commit the changes;
-* add a new annotated tag with the id `Release-N.N.NvN+1`, e.g. `Release-1.0.4v1`; the final number must be 1 higher than the previous fix release, so it could easily be `Release-1.0.4v7` if a number of errors were discovered over time;
+* add a new annotated tag with the id `Release-N.N.NvN+1`, e.g. `Release-1.0.0v1`; the final number must be 1 higher than the previous fix release, so it could easily be `Release-1.0.4v7` if a number of errors were discovered over time;
 * push the new commit(s); the webhook-driven server scripts will over-write the last copy-out of the release with this new one;
 * don't forget to merge the changes across into the component's Git repo `master` branch as well, if they are not already taken care of by changes there.
 
