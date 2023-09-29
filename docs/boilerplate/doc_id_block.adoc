@@ -5,7 +5,7 @@
 //[cols="1,1", align="center", width=100%]
 [%autowidth.spread]
 |===
-2+^|*Issuer*: {graphite_platform}[Graphite Platform Community^]
+2+^|*Issuer*: {s2_platform}[S2 Foundation^]
 
 |*Release*: {component} {release} 	|*Status*: {spec_status}
 |*Revision*: <<latest_issue>>	 	|*Date*: <<latest_issue_date>>

@@ -5,4 +5,4 @@
 #     ./do_spec_publish.sh -r RM # or BASE or PROC or any other component name
 #
 
-GPS-global/bin/spec_publish.sh "$@"
+S2-global/bin/spec_publish.sh "$@"

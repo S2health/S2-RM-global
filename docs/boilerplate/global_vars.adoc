@@ -5,22 +5,22 @@
 :apache_licence_text: Apache 2.0 Licence.
 :apache_licence_url: http://apache.org/licenses/LICENSE-2.0.html
 
-// Graphite
-:product_name: Graphite
-:graphite_platform: http://graphitehealth.io
-:graphite_website_url: http://graphitehealth.io
-:graphite_specs: https://specifications.graphitehealth.io
-:graphite_specifications_forum: https://specifications.graphitehealth.io
+// S2
+:product_name: S2
+:s2_platform: http://s2health.io
+:s2_website_url: http://s2health.io
+:s2_specs: https://specifications.s2health.io
+:s2_specifications_forum: https://specifications.s2health.io
 
 //
 // ========= Jira =========
 // links defined here are reprocessed in Nginx/Apache
 //
-:graphite_jira_home: {graphite_specs}/jira
-:graphite_prs: {graphite_jira_home}/projects/SPECPR
-:component_roadmap: {graphite_specs}/components/{component}/roadmap
-:component_history: {graphite_specs}/components/{component}/history
-:component_prs: {graphite_specs}/components/{component}/open_issues
+:s2_jira_home: {s2_specs}/jira
+:s2_prs: {s2_jira_home}/projects/SPECPR
+:component_roadmap: {s2_specs}/components/{component}/roadmap
+:component_history: {s2_specs}/components/{component}/history
+:component_prs: {s2_specs}/components/{component}/open_issues
 
 // openEHR sites
 :openehr_domain: www.openehr.org
@@ -34,7 +34,7 @@
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_software_program: {openehr_website_url}/programs/software
 :openehr_industry_partners: {openehr_website_url}/community/industry_partners/
-:openehr_logo: https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-graphite.svg
+:openehr_logo: https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 :apache_licence_img: http://apache.org/img/ASF20thAnniversary.jpg
 
@@ -96,7 +96,7 @@
 :term_release: latest
 :lang_release: latest
 :base_release: latest
-:gcm_release: latest
+:rm_release: latest
 
 :rm_release: latest
 :am_release: latest

@@ -4,48 +4,48 @@
 
 // ================== GRAPHITE ===================
 
-:graphite_gcm_forum: http://GraphiteHealth.io
+:s2_rm_forum: http://S2.io
 
 // --------------- BASE ----------------
-:graphite_base_releases: {graphite_specs}/releases/BASE/{base_release}
+:s2_base_releases: {s2_specs}/releases/BASE/{base_release}
 
-:graphite_base_base_types: {graphite_base_releases}/base_types.html
-:graphite_base_foundation_types: {graphite_base_releases}/foundation_types.html
-:graphite_base_foundation_time_types: {graphite_base_foundation_types}#_time_types
-:graphite_base_data_types: {graphite_base_releases}/data_types.html
-:graphite_base_resource: {graphite_base_releases}/resource.html
-:graphite_base_change_control: {graphite_base_releases}/change_control.html
+:s2_base_base_types: {s2_base_releases}/base_types.html
+:s2_base_foundation_types: {s2_base_releases}/foundation_types.html
+:s2_base_foundation_time_types: {s2_base_foundation_types}#_time_types
+:s2_base_data_types: {s2_base_releases}/data_types.html
+:s2_base_resource: {s2_base_releases}/resource.html
+:s2_base_change_control: {s2_base_releases}/change_control.html
 
-:graphite_base_uml_diagrams: {graphite_base_releases}/UML/diagrams
-
-// for link in preface part of docs
-:graphite_base_latest: {graphite_specs}/releases/BASE/latest
-:graphite_base_latest_base_types: {graphite_base_latest}/base_types.html
-:graphite_base_latest_foundation_types: {graphite_base_latest}/foundation_types.html
-:graphite_base_latest_data_types: {graphite_base_latest}/data_types.html
-:graphite_base_latest_resource: {graphite_base_latest}/resource.html
-:graphite_base_latest_change_control: {graphite_base_latest}/change_control.html
-
-
-:graphite_overview: {graphite_base_releases}/architecture_overview.html
-
-// --------------- GCM ----------------
-
-:graphite_gcm_releases: {graphite_specs}/releases/GCM/{gcm_release}
-
-:graphite_gcm_ehr: {graphite_gcm_releases}/ehr.html
-:graphite_gcm_entry: {graphite_gcm_releases}/entry.html
-:graphite_gcm_integration: {graphite_gcm_releases}/integration.html
-:graphite_gcm_data_structures: {graphite_gcm_releases}/data_structures.html
-:graphite_gcm_data_entity: {graphite_gcm_releases}/entity.html
+:s2_base_uml_diagrams: {s2_base_releases}/UML/diagrams
 
 // for link in preface part of docs
-:graphite_gcm_latest: {graphite_specs}/releases/GCM/latest
-:graphite_gcm_latest_ehr: {graphite_gcm_latest}/ehr.html
-:graphite_gcm_latest_entry: {graphite_gcm_latest}/entry.html
-:graphite_gcm_latest_integration: {graphite_gcm_latest}/integration.html
-:graphite_gcm_latest_data_structures: {graphite_gcm_latest}/data_structures.html
-:graphite_gcm_latest_data_entity: {graphite_gcm_latest}/entity.html
+:s2_base_latest: {s2_specs}/releases/BASE/latest
+:s2_base_latest_base_types: {s2_base_latest}/base_types.html
+:s2_base_latest_foundation_types: {s2_base_latest}/foundation_types.html
+:s2_base_latest_data_types: {s2_base_latest}/data_types.html
+:s2_base_latest_resource: {s2_base_latest}/resource.html
+:s2_base_latest_change_control: {s2_base_latest}/change_control.html
+
+
+:s2_overview: {s2_base_releases}/architecture_overview.html
+
+// --------------- RM ----------------
+
+:s2_rm_releases: {s2_specs}/releases/RM/{rm_release}
+
+:s2_rm_ehr: {s2_rm_releases}/ehr.html
+:s2_rm_entry: {s2_rm_releases}/entry.html
+:s2_rm_integration: {s2_rm_releases}/integration.html
+:s2_rm_data_structures: {s2_rm_releases}/data_structures.html
+:s2_rm_data_entity: {s2_rm_releases}/entity.html
+
+// for link in preface part of docs
+:s2_rm_latest: {s2_specs}/releases/RM/latest
+:s2_rm_latest_ehr: {s2_rm_latest}/ehr.html
+:s2_rm_latest_entry: {s2_rm_latest}/entry.html
+:s2_rm_latest_integration: {s2_rm_latest}/integration.html
+:s2_rm_latest_data_structures: {s2_rm_latest}/data_structures.html
+:s2_rm_latest_data_entity: {s2_rm_latest}/entity.html
 
 // ================== OPENEHR ===================
 

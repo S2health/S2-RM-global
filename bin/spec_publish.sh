@@ -7,7 +7,7 @@
 #
 # ============== Definitions =============
 #
-def_dir_leader="GPS-"
+def_dir_leader="S2-"
 dir_leader=${def_dir_leader}
 
 
@@ -174,9 +174,10 @@ uml_gen_dir=docs/UML/classes
 manifest_file=manifest.json
 manifest_vars_file=manifest_vars.adoc
 
-# relative location of UML directory under any GPS-XX directory
+# relative location of UML directory under any S2-XX directory
 uml_source_dir=computable/UML
-uml_root_package="graphite"
+uml_root_package="s2"
+product_name="S2"
 
 specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
@@ -246,14 +247,14 @@ while getopts "nfuhpqrtwvm:l:" o; do
 done
 shift $((OPTIND-1))
 
-# specifications root dir: this directory must contain clones of all the GPS-XX repos
+# specifications root dir: this directory must contain clones of all the S2-XX repos
 # as well as the adl-antlr repo.
 work_root=$PWD
 pub_home=${pub_home:-$PWD}
 echo "setting pub_home to $pub_home"
 echo "setting work_root to $work_root"
 
-# directory of GPS-global repo clone from a GPS-XX/docs/xxx directory
+# directory of S2-global repo clone from a S2-XX/docs/xxx directory
 # resolved during processing of this script
 ref_dir=$pub_home//$dir_leader$global_ref_repo
 echo "setting ref_dir to $ref_dir"
@@ -343,7 +344,7 @@ for component_dir in ${component_list[@]}; do
 		fi
 
 		# if UML source newer than UML docs or no UML docs, regenerate
-		uml_file="computable/UML/Graphite_UML-$component.mdzip"
+		uml_file="computable/UML/${product_name}_UML-$component.mdzip"
 		echo "checking UML file $uml_file"
 		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i "{%s_release}" -r $uml_root_package ${package_qualifiers:+-q} -c $component -o docs/UML $uml_file" 
 		if [[ "$uml_force_generate" = true || \
