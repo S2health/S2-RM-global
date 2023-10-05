@@ -7,7 +7,10 @@
 #
 # ============== Definitions =============
 #
-def_dir_leader="S2-"
+product_name="S2"
+component_root="RM"
+root_component_dir="$product_name-${component_root}"
+def_dir_leader="$product_name-${component_root}-"
 dir_leader=${def_dir_leader}
 
 
@@ -176,8 +179,7 @@ manifest_vars_file=manifest_vars.adoc
 
 # relative location of UML directory under any S2-XX directory
 uml_source_dir=computable/UML
-uml_root_package="s2"
-product_name="S2"
+uml_root_package=${product_name,,}	# = product name in lower case
 
 specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
@@ -293,7 +295,11 @@ fi
 # see if there are individual args like 'AM', 'RM' etc
 if [ $# -ge 1 ]; then
 	while [ $# -ge 1 ]; do
-		component_args="${component_args} ${dir_leader}$1"
+		if [ "$1" == "$component_root" ]; then
+			component_args="${component_args} ${root_component_dir}"
+		else
+			component_args="${component_args} ${dir_leader}$1"
+		fi
 		shift
 	done
 	component_list=($component_args)

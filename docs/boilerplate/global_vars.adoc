@@ -11,6 +11,7 @@
 :s2_website_url: http://s2health.io
 :s2_specs: https://specifications.s2health.io
 :s2_specifications_forum: https://specifications.s2health.io
+:s2_logo: http://s2health.io/logo.png
 
 //
 // ========= Jira =========

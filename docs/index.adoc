@@ -19,7 +19,7 @@ include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
 // ============================================ Asciidoc PREAMBLE =============================================
 //
 
-image::{openehr_logo}["openEHR logo",align="center"]
+image::{s2_logo}["S2 logo",align="center"]
 
 = Global Class Index
 

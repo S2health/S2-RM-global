@@ -14,9 +14,8 @@
 :s2_base_foundation_time_types: {s2_base_foundation_types}#_time_types
 :s2_base_data_types: {s2_base_releases}/data_types.html
 :s2_base_resource: {s2_base_releases}/resource.html
+:s2_base_patterns: {s2_base_releases}/patterns.html
 :s2_base_change_control: {s2_base_releases}/change_control.html
-
-:s2_base_uml_diagrams: {s2_base_releases}/UML/diagrams
 
 // for link in preface part of docs
 :s2_base_latest: {s2_specs}/releases/BASE/latest
@@ -25,27 +24,44 @@
 :s2_base_latest_data_types: {s2_base_latest}/data_types.html
 :s2_base_latest_resource: {s2_base_latest}/resource.html
 :s2_base_latest_change_control: {s2_base_latest}/change_control.html
+:s2_base_latest_patterns: {s2_base_latest}/patterns.html
+
+// --------------- CARE ----------------
+
+:s2_care_releases: {s2_specs}/releases/CARE/{rm_release}
+
+:s2_care_ehr: {s2_care_releases}/ehr.html
+:s2_care_entry: {s2_care_releases}/entry.html
+
+// for link in preface part of docs
+:s2_care_latest: {s2_specs}/releases/CARE/latest
+:s2_care_latest_ehr: {s2_care_latest}/ehr.html
+:s2_care_latest_entry: {s2_care_latest}/entry.html
 
 
-:s2_overview: {s2_base_releases}/architecture_overview.html
+// --------------- ENTITY ----------------
+
+:s2_entity_releases: {s2_specs}/releases/ENTITY/{rm_release}
+
+:s2_entity_entity: {s2_care_releases}/entity.html
+
+// for link in preface part of docs
+:s2_entity_latest: {s2_specs}/releases/ENTITY/latest
+:s2_entity_latest_entity: {s2_entity_latest}/entity.html
 
 // --------------- RM ----------------
 
 :s2_rm_releases: {s2_specs}/releases/RM/{rm_release}
 
-:s2_rm_ehr: {s2_rm_releases}/ehr.html
-:s2_rm_entry: {s2_rm_releases}/entry.html
-:s2_rm_integration: {s2_rm_releases}/integration.html
-:s2_rm_data_structures: {s2_rm_releases}/data_structures.html
-:s2_rm_data_entity: {s2_rm_releases}/entity.html
+:s2_rm_overview: {s2_rm_releases}/architecture_overview.html
+:s2_rm_uml_diagrams: {s2_rm_releases}/UML/diagrams
+
+:s2_rm_integration: {s2_care_releases}/integration.html
 
 // for link in preface part of docs
 :s2_rm_latest: {s2_specs}/releases/RM/latest
-:s2_rm_latest_ehr: {s2_rm_latest}/ehr.html
-:s2_rm_latest_entry: {s2_rm_latest}/entry.html
 :s2_rm_latest_integration: {s2_rm_latest}/integration.html
-:s2_rm_latest_data_structures: {s2_rm_latest}/data_structures.html
-:s2_rm_latest_data_entity: {s2_rm_latest}/entity.html
+:s2_rm_latest_overview: {s2_rm_latest}/architecture_overview.html
 
 // ================== OPENEHR ===================
 
