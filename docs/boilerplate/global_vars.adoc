@@ -35,7 +35,8 @@
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_software_program: {openehr_website_url}/programs/software
 :openehr_industry_partners: {openehr_website_url}/community/industry_partners/
-:openehr_logo: https://uploads-ssl.webflow.com/63570cd7d4eda80d654ccf14/64027a592d749e7df28c6248_primary-s2.svg
+:openehr_logo: {openehr_specs}/images/openEHR_logo_RGB.svg
+
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 :apache_licence_img: http://apache.org/img/ASF20thAnniversary.jpg
 
