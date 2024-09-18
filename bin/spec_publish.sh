@@ -13,6 +13,7 @@ root_component_dir="$product_name-${component_root}"
 def_dir_leader="$product_name-${component_root}-"
 dir_leader=${def_dir_leader}
 
+UML_EXTRACT="uml_generate_msa.sh"
 
 USAGE="${0} [-nfuhrptv] [-m pub_hom_dir] [-l release] [component names]: generate publishing outputs; HTML by default 
   -f : force document regeneration
@@ -204,7 +205,7 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "nfuhpqrtwvm:l:" o; do
+while getopts "fhnpqrtuvwm:l:" o; do
     case "${o}" in
         n)
             dir_leader=""
@@ -352,7 +353,7 @@ for component_dir in ${component_list[@]}; do
 		# if UML source newer than UML docs or no UML docs, regenerate
 		uml_file="computable/UML/${product_name}_UML-$component.mdzip"
 		echo "checking UML file $uml_file"
-		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i "{%s_release}" -r $uml_root_package ${package_qualifiers:+-q} -c $component -o docs/UML $uml_file" 
+		uml_regen_cmd="$ref_dir/bin/$UML_EXTRACT -d svg -i "{%s_release}" -r $uml_root_package ${package_qualifiers:+-q} -c $component -o docs/UML $uml_file" 
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
