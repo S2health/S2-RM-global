@@ -7,11 +7,13 @@
 
 // S2
 :product_name: S2
-:s2_platform: http://s2health.io
-:s2_website_url: http://s2health.io
-:s2_specs: https://specifications.s2health.io
-:s2_specifications_forum: https://specifications.s2health.io
-:s2_logo: http://s2health.io/logo.png
+:org_name: S2 Health
+:s2_domain: s2health.org
+:s2_platform: http://{s2_domain}
+:s2_website_url: http://{s2_domain}
+:s2_specs: https://specifications.{s2_domain}
+:s2_specifications_forum: https://specifications.{s2_domain}
+:s2_logo: https://studious-adventure-evrqgo5.pages.github.io/resources/logos/S2-logo.svg
 
 //
 // ========= Jira =========
@@ -22,6 +24,7 @@
 :component_roadmap: {s2_specs}/components/{component}/roadmap
 :component_history: {s2_specs}/components/{component}/history
 :component_prs: {s2_specs}/components/{component}/open_issues
+:spec_tickets: {s2_specs}/tickets
 
 // openEHR sites
 :openehr_domain: www.openehr.org
@@ -82,7 +85,6 @@
 
 // URI for any issue, mapped to /jira/browse/<issue> in Apache rewrites
 // Second var is legacy name
-:spec_tickets: {openehr_specs}/tickets
 :openehr_jira: {openehr_specs}/tickets
 
 // special Jira URIs
@@ -98,7 +100,7 @@
 :term_release: latest
 :lang_release: latest
 :base_release: latest
-:rm_release: latest
+:care_release: latest
 
 :rm_release: latest
 :am_release: latest

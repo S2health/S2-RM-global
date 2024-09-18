@@ -9,7 +9,7 @@
 // --------------- BASE ----------------
 :s2_base_releases: {s2_specs}/releases/BASE/{base_release}
 
-:s2_base_base_types: {s2_base_releases}/base_types.html
+:s2_base_model_support: {s2_base_releases}/model_support.html
 :s2_base_foundation_types: {s2_base_releases}/foundation_types.html
 :s2_base_foundation_time_types: {s2_base_foundation_types}#_time_types
 :s2_base_data_types: {s2_base_releases}/data_types.html
@@ -19,7 +19,7 @@
 
 // for link in preface part of docs
 :s2_base_latest: {s2_specs}/releases/BASE/latest
-:s2_base_latest_base_types: {s2_base_latest}/base_types.html
+:s2_base_latest_model_support: {s2_base_latest}/model_support.html
 :s2_base_latest_foundation_types: {s2_base_latest}/foundation_types.html
 :s2_base_latest_data_types: {s2_base_latest}/data_types.html
 :s2_base_latest_resource: {s2_base_latest}/resource.html
@@ -107,7 +107,7 @@
 // --------------- BASE ----------------
 :openehr_base_releases: {openehr_specs}/releases/BASE/{base_release}
 
-:openehr_base_types: {openehr_base_releases}/base_types.html
+:openehr_model_support: {openehr_base_releases}/model_support.html
 :openehr_foundation_types: {openehr_base_releases}/foundation_types.html
 :openehr_foundation_time_types: {openehr_foundation_types}#_time_types
 :openehr_base_resource: {openehr_base_releases}/resource.html
@@ -120,7 +120,7 @@
 
 // for link in preface part of docs
 :openehr_base_latest: {openehr_specs}/releases/BASE/latest
-:openehr_base_latest_base_types: {openehr_base_latest}/base_types.html
+:openehr_base_latest_model_support: {openehr_base_latest}/model_support.html
 :openehr_base_latest_foundation_types: {openehr_base_latest}/foundation_types.html
 :openehr_base_latest_resource: {openehr_base_latest}/resource.html
 :openehr_base_latest_overview: {openehr_base_latest}/architecture_overview.html

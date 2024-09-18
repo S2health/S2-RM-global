@@ -3,12 +3,12 @@
 //
 [cols="^1,4", options="header"]
 |===
-2+^|(C) {current_year} S2 Foundation
+2+^|(C) {current_year} {org_name}
 
-2+^|{openehr_website_url}[S2 Foundation^] is an independent, non-profit foundation.
+2+^|{openehr_website_url}[{org_name}^] is an independent, non-profit organization.
 
 |*Issuer*
-|{s2_platform}[S2 Foundation^]
+|{s2_platform}[S2 {org_name}^]
 
 |*Keywords*
 |{keywords}
