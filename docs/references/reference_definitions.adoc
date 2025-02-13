@@ -4,7 +4,7 @@
 
 // ================== GRAPHITE ===================
 
-:s2_rm_forum: http://S2.io
+:s2_rm_forum: http://discourse.s2health.org
 
 // --------------- BASE ----------------
 :s2_base_releases: {s2_specs}/releases/BASE/{base_release}

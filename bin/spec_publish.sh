@@ -168,7 +168,7 @@ usage() { echo "$USAGE" 1>&2; exit 1; }
 
 # ------------- static vars --------------
 year=`date +%G`
-stylesheet=openehr.css
+stylesheet=s2.css
 pdf_theme=openehr_full_pdf-theme.yml
 master_doc_name=master.adoc
 index_doc_name=index.adoc
