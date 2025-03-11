@@ -9,7 +9,6 @@
 #
 product_name="S2"
 component_root="RM"
-root_component_dir="$product_name-${component_root}"
 def_dir_leader="$product_name-${component_root}-"
 dir_leader=${def_dir_leader}
 
@@ -174,6 +173,8 @@ master_doc_name=master.adoc
 index_doc_name=index.adoc
 global_ref_repo=global
 uml_gen_dir=docs/UML/classes
+s2_pkg_depth=5
+s2_link_template='/releases/\${component_prefix}\${component}/{\${component_lower}_release}/docs/\${spec_name}.html'
 
 manifest_file=manifest.json
 manifest_vars_file=manifest_vars.adoc
@@ -182,12 +183,12 @@ manifest_vars_file=manifest_vars.adoc
 uml_source_dir=computable/UML
 uml_root_package=${product_name,,}	# = product name in lower case
 
-specs_root_uri=https://specifications.openehr.org
-specs_css_uri=$specs_root_uri/styles
+specs_root_uri=https://platform.s2health.org
+specs_css_uri=$specs_root_uri/css
 
 # ------------- static vars --------------
 # release id
-default_release=latest
+default_release=dev
 release=$default_release
 
 use_remote_resources=false
@@ -293,20 +294,16 @@ if [ "$release" != "$default_release" ]; then
 	fi
 fi
 
-# see if there are individual args like 'AM', 'RM' etc
+# see if there are individual args like 'S2-RM-BASE', 'S2-RM-ENTITY' etc
 if [ $# -ge 1 ]; then
 	while [ $# -ge 1 ]; do
-		if [ "$1" == "$component_root" ]; then
-			component_args="${component_args} ${root_component_dir}"
-		else
-			component_args="${component_args} ${dir_leader}$1"
-		fi
+		component_args="${component_args} $1"
 		shift
 	done
-	component_list=($component_args)
 else
-	component_list=$(ls -1d ${dir_leader}*)
+	component_args=$(ls -1d ${dir_leader}*)
 fi
+component_list=($component_args)
 
 # determine component list
 if [ ${#component_list[@]} -eq 0 ]; then
@@ -314,7 +311,7 @@ if [ ${#component_list[@]} -eq 0 ]; then
 	exit
 else
 	echo "+++++++++ Processing components: "
-	for i in ${component_list[@]}; do echo $i; done
+	for i in "${component_list[@]}"; do echo $i; done
 fi
 
 # set some config vars based on command line
@@ -328,32 +325,33 @@ echo "setting stylesdir to $stylesdir"
 
 # ---------- do the publishing ----------
 
-for component_dir in ${component_list[@]}; do 
+for component in "${component_list[@]}"; do
 
-	echo "========= cd $component_dir =========="
-	cd $component_dir
-	component=${component_dir#"$dir_leader"}
+	echo "========= cd $component =========="
+	cd "$component" || exit 1
 
 	# re-run UML extractor to create UML doc files if applicable
 	# get a timestamp of UML dir
 	ts_uml="0.0"
 	ts_uml_docs="0.0"
 	if [ -d $uml_source_dir ]; then
-		ts_uml=`find $uml_source_dir -printf "%T@\n" | sort | tail -1`
+		ts_uml=$(find $uml_source_dir -printf "%T@\n" | sort | tail -1)
 
 		# get a timestamp of the generated UML docs dir
 		if [ -d $uml_gen_dir ]; then
 			if [ "$(ls -A $uml_gen_dir)" ]; then
-				ts_uml_docs=`find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1`
+				ts_uml_docs=$(find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1)
 			else
 				uml_docs_empty=true
 			fi
 		fi
 
 		# if UML source newer than UML docs or no UML docs, regenerate
-		uml_file="computable/UML/${product_name}_UML-$component.mdzip"
+		uml_file="${uml_source_dir}/${component}.mdzip"
+		component_package="${component##*-}"
+		component_prefix="$(echo "$component" | sed 's/[^-]*$//')"
 		echo "checking UML file $uml_file"
-		uml_regen_cmd="$ref_dir/bin/$UML_EXTRACT -d svg -i "{%s_release}" -r $uml_root_package ${package_qualifiers:+-q} -c $component -o docs/UML $uml_file" 
+		uml_regen_cmd="$ref_dir/bin/$UML_EXTRACT -d svg -k $s2_link_template -p $s2_pkg_depth -r $uml_root_package ${package_qualifiers:+-q} -c $component_package -P $component_prefix -o docs/UML $uml_file"
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
@@ -362,10 +360,10 @@ for component_dir in ${component_list[@]}; do
 			rm -f docs/UML/diagrams/*.*
 
 			echo "$uml_regen_cmd"
-			eval $uml_regen_cmd
+			eval "$uml_regen_cmd"
 
 			# regenerate timestamp of the generated UML docs dir
-			ts_uml_docs=`find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1`
+			ts_uml_docs=$(find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1)
 		fi
 	fi
 
@@ -397,16 +395,16 @@ for component_dir in ${component_list[@]}; do
 			sed -e '/[{}]/d' -e 's/^  /:/' -e 's/"//g' -e s/,$// | while read line 
 		do
 			if [[ "$line" == ":id:"* ]]; then
-				doc_name=`echo $line | sed -e 's/:id: //'`
+				doc_name=${line//:id: /}
 				doc_dir=docs/$doc_name
 				out_path=$doc_dir/$manifest_vars_file
-				if [ -d $doc_dir ]; then
+				if [ -d "$doc_dir" ]; then
 					echo "    writing $out_path"
-					echo -n > $out_path
+					echo -n > "$out_path"
 				fi
 			else
-				if [ -d $doc_dir ]; then
-					echo $line >> $out_path
+				if [ -d "$doc_dir" ]; then
+					echo "$line" >> "$out_path"
 				fi
 			fi
 		done
@@ -422,9 +420,9 @@ for component_dir in ${component_list[@]}; do
 
 			echo -n "    ------------- checking $docdir "
 			# check if target .html file is most recent; if not regenerate (note, we exclude the newly-created manifest file
-			ts_src_docs=`find $docdir ! -name "$manifest_vars_file" -printf "%T@\n" | sort | sed -e /$manifest_vars_file/d | tail -1`
-			ts_main_manifest=`stat -c %Y $manifest_file`
-			ts_out_doc=`stat -c %Y $docdir.html`
+			ts_src_docs=$(find $docdir ! -name "$manifest_vars_file" -printf "%T@\n" | sort | sed -e /$manifest_vars_file/d | tail -1)
+			ts_main_manifest=$(stat -c %Y $manifest_file)
+			ts_out_doc=$(stat -c %Y $docdir.html)
 			if [[ "$force_generate" = true || \
 				! -f "$docdir.html" || \
 				$(echo "$ts_src_docs > $ts_out_doc" | bc -l) -eq 1 || \

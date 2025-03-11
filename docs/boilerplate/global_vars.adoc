@@ -1,6 +1,6 @@
 :affiliates: Australia, Brazil, Japan, China, New Zealand, Norway, Slovenia
-:cc_licence_text: Creative Commons Attribution-NoDerivs 3.0 Unported.
-:cc_licence_url: https://creativecommons.org/licenses/by-nd/3.0/
+:cc_licence_text: Creative Commons Attribution-NoDerivs 4.0 Unported.
+:cc_licence_url: https://creativecommons.org/licenses/by-nd/4.0/
 
 :apache_licence_text: Apache 2.0 Licence.
 :apache_licence_url: http://apache.org/licenses/LICENSE-2.0.html
@@ -9,22 +9,25 @@
 :product_name: S2
 :org_name: S2 Health
 :s2_domain: s2health.org
-:s2_platform: http://{s2_domain}
-:s2_website_url: http://{s2_domain}
-:s2_specs: https://specifications.{s2_domain}
-:s2_specifications_forum: https://specifications.{s2_domain}
-:s2_logo: https://studious-adventure-evrqgo5.pages.github.io/resources/logos/S2-logo.svg
+:s2_platform_url: http://{s2_domain}
+:s2_website_url: http://www.{s2_domain}
+:s2_git: https://github.com/S2health
+
+:s2_platform_url: https://platform.{s2_domain}
+:s2_specs: {s2_platform_url}
+:s2_models_url: https://models.{s2_domain}
+:s2_specifications_forum: https://discourse.{s2_domain}
+:s2_logo: http://{s2_domain}/resources/logos/s2logo.svg
 
 //
-// ========= Jira =========
-// links defined here are reprocessed in Nginx/Apache
+// S2 issue trackers
 //
-:s2_jira_home: {s2_specs}/jira
-:s2_prs: {s2_jira_home}/projects/SPECPR
-:component_roadmap: {s2_specs}/components/{component}/roadmap
-:component_history: {s2_specs}/components/{component}/history
-:component_prs: {s2_specs}/components/{component}/open_issues
-:spec_tickets: {s2_specs}/tickets
+:component_roadmap: {s2_git}/{component}/milestones
+:component_history: {s2_git}/{component}/milestones?state=closed
+:component_prs: {s2_git}/{component}/issues?q=is%3Aissue%20state%3Aopen%20label%3Adocumentation%20label%3Aenhancement%20label%3Aerror
+:spec_tickets: {s2_git}/{component}
+:component_prs_fixed: {s2_git}/{component}/issues?q=is%3Aissue%20state%3Aclosed%20label%3Adocumentation%20label%3Aenhancement%20label%3Aerror%20milestone%3A
+:component_crs_done: {s2_git}/{component}/issues?q=is%3Aissue%20state%3Aclosed%20label%3Achange%20milestone%3A
 
 // openEHR sites
 :openehr_domain: www.openehr.org
@@ -52,12 +55,6 @@
 // UML directory for live links to graphic files
 :uml_diagrams_uri: UML/diagrams
 :uml_aom14_diagrams_uri: UML/AOM1.4/diagrams
-
-// diagrams & images URIs in docs/common
-:common_diagrams_uri: common/diagrams
-:common_images_uri: common/images
-:overview_diagrams_uri: overview/diagrams
-:overview_images_uri: overview/images
 
 // diagrams & images URIs in current document
 :diagrams_uri: {doc_name}/diagrams
@@ -93,25 +90,24 @@
 // The following two are partial patterns for URIs of the form
 // /components/<component>/<release>/issues
 // /components/<component>/<release>/changes
-:component_prs_fixed: {openehr_specs}/components/{component}/
-:component_crs_done: {openehr_specs}/components/{component}/
 
-:release: latest
-:term_release: latest
-:lang_release: latest
-:base_release: latest
-:care_release: latest
 
-:rm_release: latest
-:am_release: latest
-:sm_release: latest
-:cds_release: latest
-:cnf_release: latest
-:intg_release: latest
-:query_release: latest
-:proc_release: latest
-:its_release: latest
-:its_rest_release: latest
-:its_json_release: latest
-:its_bmm_release: latest
-:its_xml_release: latest
+:release: dev
+:term_release: dev
+:lang_release: dev
+:base_release: dev
+:care_release: dev
+
+:rm_release: dev
+:am_release: dev
+:sm_release: dev
+:cds_release: dev
+:cnf_release: dev
+:intg_release: dev
+:query_release: dev
+:proc_release: dev
+:its_release: dev
+:its_rest_release: dev
+:its_json_release: dev
+:its_bmm_release: dev
+:its_xml_release: dev

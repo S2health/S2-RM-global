@@ -2,83 +2,74 @@
 // specification resources; note variable substitutions in some of these for release id
 //
 
-// ================== GRAPHITE ===================
+// ================== S2 ===================
 
 :s2_rm_forum: http://discourse.s2health.org
 
 // --------------- BASE ----------------
-:s2_base_releases: {s2_specs}/releases/BASE/{base_release}
+:s2_base_releases: {s2_specs}/releases/S2-RM-BASE/{base_release}
+:s2_base_releases_docs: {s2_base_releases}/docs
 
-:s2_base_model_support: {s2_base_releases}/model_support.html
-:s2_base_foundation_types: {s2_base_releases}/foundation_types.html
-:s2_base_foundation_time_types: {s2_base_foundation_types}#_time_types
-:s2_base_data_types: {s2_base_releases}/data_types.html
-:s2_base_resource: {s2_base_releases}/resource.html
-:s2_base_patterns: {s2_base_releases}/patterns.html
-:s2_base_change_control: {s2_base_releases}/change_control.html
+:s2_base_model_support: {s2_base_releases_docs}/model_support.html
+:s2_base_foundation_types: {s2_base_releases_docs}/foundation_types.html
+:s2_base_foundation_time_types: {s2_base_releases_docs}#_time_types
+:s2_base_data_types: {s2_base_releases_docs}/data_types.html
+:s2_base_resource: {s2_base_releases_docs}/resource.html
+:s2_base_patterns: {s2_base_releases_docs}/patterns.html
+:s2_base_change_control: {s2_base_releases_docs}/change_control.html
 
 // for link in preface part of docs
-:s2_base_latest: {s2_specs}/releases/BASE/latest
-:s2_base_latest_model_support: {s2_base_latest}/model_support.html
-:s2_base_latest_foundation_types: {s2_base_latest}/foundation_types.html
-:s2_base_latest_data_types: {s2_base_latest}/data_types.html
-:s2_base_latest_resource: {s2_base_latest}/resource.html
-:s2_base_latest_change_control: {s2_base_latest}/change_control.html
-:s2_base_latest_patterns: {s2_base_latest}/patterns.html
+:s2_base_latest: {s2_specs}/releases/S2-RM-BASE/dev
+:s2_base_latest_docs: {s2_base_latest}/docs
+:s2_base_latest_model_support: {s2_base_latest_docs}/model_support.html
+:s2_base_latest_foundation_types: {s2_base_latest_docs}/foundation_types.html
+:s2_base_latest_data_types: {s2_base_latest_docs}/data_types.html
+:s2_base_latest_resource: {s2_base_latest_docs}/resource.html
+:s2_base_latest_change_control: {s2_base_latest_docs}/change_control.html
+:s2_base_latest_patterns: {s2_base_latest_docs}/patterns.html
 
 // --------------- CARE ----------------
 
-:s2_care_releases: {s2_specs}/releases/CARE/{rm_release}
+:s2_care_releases: {s2_specs}/releases/S2-RM-CARE/{rm_release}
+:s2_care_releases_docs: {s2_care_releases}/docs
 
-:s2_care_ehr: {s2_care_releases}/ehr.html
-:s2_care_entry: {s2_care_releases}/entry.html
+:s2_care_ehr: {s2_care_releases_docs}/ehr.html
+:s2_care_entry: {s2_care_releases_docs}/entry.html
 
 // for link in preface part of docs
-:s2_care_latest: {s2_specs}/releases/CARE/latest
-:s2_care_latest_ehr: {s2_care_latest}/ehr.html
-:s2_care_latest_entry: {s2_care_latest}/entry.html
-
+:s2_care_latest: {s2_specs}/releases/S2-RM-CARE/dev
+:s2_care_latest_docs: {s2_care_latest}/docs
+:s2_care_latest_ehr: {s2_care_latest_docs}/ehr.html
+:s2_care_latest_entry: {s2_care_latest_docs}/entry.html
 
 // --------------- ENTITY ----------------
 
-:s2_entity_releases: {s2_specs}/releases/ENTITY/{rm_release}
+:s2_entity_releases: {s2_specs}/releases/S2-RM-ENTITY/{rm_release}
+:s2_entity_releases_docs: {s2_entity_releases}/docs
 
-:s2_entity_entity: {s2_care_releases}/entity.html
+:s2_entity_entity: {s2_entity_releases_docs}/entity.html
 
 // for link in preface part of docs
-:s2_entity_latest: {s2_specs}/releases/ENTITY/latest
-:s2_entity_latest_entity: {s2_entity_latest}/entity.html
+:s2_entity_latest: {s2_specs}/releases/S2-RM-ENTITY/dev
+:s2_entity_latest_docs: {s2_entity_latest}/docs
+:s2_entity_latest_entity: {s2_entity_latest_docs}/entity.html
 
 // --------------- RM ----------------
 
 :s2_rm_releases: {s2_specs}/releases/RM/{rm_release}
+:s2_rm_releases_docs: {s2_rm_releases}/docs
 
-:s2_rm_overview: {s2_rm_releases}/architecture_overview.html
-:s2_rm_uml_diagrams: {s2_rm_releases}/UML/diagrams
-
-:s2_rm_integration: {s2_care_releases}/integration.html
+:s2_rm_overview: {s2_rm_releases_docs}/architecture_overview.html
+:s2_rm_uml_diagrams: {s2_rm_releases_docs}/UML/diagrams
+:s2_rm_integration: {s2_rm_releases_docs}/integration.html
 
 // for link in preface part of docs
 :s2_rm_latest: {s2_specs}/releases/RM/latest
-:s2_rm_latest_integration: {s2_rm_latest}/integration.html
-:s2_rm_latest_overview: {s2_rm_latest}/architecture_overview.html
+:s2_rm_latest_docs: {s2_rm_latest}/docs
+:s2_rm_latest_integration: {s2_rm_latest_docs}/integration.html
+:s2_rm_latest_overview: {s2_rm_latest_docs}/architecture_overview.html
 
 // ================== OPENEHR ===================
-
-// --------------- 1.0.2 legacy links ----------------
-:openehr_release_102: {openehr_specs}/releases/RM/Release-1.0.2
-:openehr_release_102_pdf: {openehr_specs}/releases/1.0.2/architecture
-:openehr_18308: {openehr_release_102_pdf}/requirements/iso18308_conformance.pdf
-:openehr_rm_102_common: {openehr_release_102_pdf}/rm/common_im.pdf
-:openehr_rm_102_data_types: {openehr_release_102_pdf}/rm/data_types_im.pdf
-:openehr_rm_102_support: {openehr_release_102_pdf}/rm/support_im.pdf
-
-:openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl.pdf
-:openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom.pdf
-
-:openehr_am_def_pri: {openehr_release_102_pdf}/am/archetype_principles.pdf
-:openehr_am_arch_sys: {openehr_release_102_pdf}/am/archetype_system.pdf
-:openehr_am_oap: {openehr_release_102_pdf}/am/openehr_archetype_profile.pdf 
 
 // --------------- AM ----------------
 :openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
@@ -107,27 +98,24 @@
 // --------------- BASE ----------------
 :openehr_base_releases: {openehr_specs}/releases/BASE/{base_release}
 
-:openehr_model_support: {openehr_base_releases}/model_support.html
-:openehr_foundation_types: {openehr_base_releases}/foundation_types.html
-:openehr_foundation_time_types: {openehr_foundation_types}#_time_types
+:openehr_base_foundation_types: {openehr_base_releases}/foundation_types.html
+:openehr_base_types: {openehr_base_releases}/base_types.html
+:openehr_base_foundation_time_types: {openehr_foundation_types}#_time_types
 :openehr_base_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 :openehr_path_syntax: {openehr_overview}#_paths_and_locators
 :openehr_path_syntax_predicates: {openehr_overview}#_predicate_expressions
 
 :openehr_base_uml_diagrams: {openehr_base_releases}/UML/diagrams
-:openehr_base_release_102: {openehr_specs}/releases/BASE/Release-1.0.2
 
 // for link in preface part of docs
 :openehr_base_latest: {openehr_specs}/releases/BASE/latest
 :openehr_base_latest_model_support: {openehr_base_latest}/model_support.html
 :openehr_base_latest_foundation_types: {openehr_base_latest}/foundation_types.html
+:openehr_base_latest_base_types: {openehr_base_latest}/base_types.html
 :openehr_base_latest_resource: {openehr_base_latest}/resource.html
 :openehr_base_latest_overview: {openehr_base_latest}/architecture_overview.html
 
-// For legacy referencing from AM Release-2.1.0, AM Release-2.2.1
-:openehr_base_release_104: {openehr_specs}/releases/BASE/Release-1.0.4
-:openehr_expression: {openehr_base_release_104}/expression.html
 
 // --------------- CDS ----------------
 :openehr_cds_releases: {openehr_specs}/releases/CDS/{cds_release}
