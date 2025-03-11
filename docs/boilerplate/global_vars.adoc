@@ -87,24 +87,20 @@
 // special Jira URIs
 :openehr_terminology_request: {openehr_specs}/components/TERM/request
 
-// The following two are partial patterns for URIs of the form
-// /components/<component>/<release>/issues
-// /components/<component>/<release>/changes
-
 
 :release: dev
 :term_release: dev
 :lang_release: dev
 :base_release: dev
 :care_release: dev
+:admin_release: dev
+:entity_release: dev
 
 :rm_release: dev
 :am_release: dev
 :sm_release: dev
-:cds_release: dev
-:cnf_release: dev
-:intg_release: dev
 :query_release: dev
+
 :proc_release: dev
 :its_release: dev
 :its_rest_release: dev
