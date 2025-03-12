@@ -274,26 +274,6 @@ local_ref_uri=${PWD#/cygdrive/c}/$dir_leader$global_ref_repo
 # Asciidoctor var: location of Antlr grammars
 grammar_dir=$pub_home/adl-antlr/src/main/antlr/
 
-# Generate special release Asciidoctor option if 'release' was set; only one component is allowed
-# in this case, because releases are component specific.
-if [ "$release" != "$default_release" ]; then
-	if [ $# -ne 1 ]; then
-		echo "$COMPONENTS_RELEASE_ERR"
-		exit
-	else
-		# if a release was specified, then for the component, we set an Asciidoctor variable to that release
-		# e.g. if component was 'RM' and release = 'Release-1.0.3', then construct a variable string for the
-		# Asciidoctor call as 'rm_release=Release-1.0.3'
-		
-		rel_var=$(echo $1 | tr '[:upper:]' '[:lower:]')_release
-		echo " ****** process $1 at release $release (setting $rel_var)"
-
-		# create additional argument string to be passed to asciidoctor function to set release
-		ad_varargs="-a $rel_var=$release "
-		echo " ****** adoc varargs = $ad_varargs"
-	fi
-fi
-
 # see if there are individual args like 'S2-RM-BASE', 'S2-RM-ENTITY' etc
 if [ $# -ge 1 ]; then
 	while [ $# -ge 1 ]; do
@@ -350,6 +330,21 @@ for component in "${component_list[@]}"; do
 		uml_file="${uml_source_dir}/${component}.mdzip"
 		component_package="${component##*-}"
 		component_prefix="$(echo "$component" | sed 's/[^-]*$//')"
+
+    # Generate special release Asciidoctor option if 'release' was set
+    if [ "$release" != "$default_release" ]; then
+        # if a release was specified, then for the component, we set an Asciidoctor variable to that release
+        # e.g. if component was 'RM' and release = 'Release-1.0.3', then construct a variable string for the
+        # Asciidoctor call as 'rm_release=Release-1.0.3'
+
+        rel_var=${component_package,,}_release
+        echo " ****** process $1 at release $release (setting $rel_var)"
+
+        # create additional argument string to be passed to asciidoctor function to set release
+        ad_varargs="-a $rel_var=$release "
+        echo " ****** adoc varargs = $ad_varargs"
+    fi
+
 		echo "checking UML file $uml_file"
 		uml_regen_cmd="$ref_dir/bin/$UML_EXTRACT -d svg -k $s2_link_template -p $s2_pkg_depth -r $uml_root_package ${package_qualifiers:+-q} -c $component_package -P $component_prefix -o docs/UML $uml_file"
 		if [[ "$uml_force_generate" = true || \
