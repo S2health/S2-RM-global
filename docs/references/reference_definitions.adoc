@@ -54,6 +54,16 @@
 :s2_entity_latest_docs: {s2_entity_latest}/docs
 :s2_entity_latest_entity: {s2_entity_latest_docs}/entity.html
 
+
+// --------------- INTG ----------------
+
+:s2_intg_releases: {s2_specs}/releases/S2-RM-INTG/{intg_release}
+:s2_intg_releases_docs: {s2_intg_releases}/docs
+
+:s2_intg_latest: {s2_specs}/releases/S2-RM-INTG/dev
+:s2_intg_latest_docs: {s2_intg_latest}/docs
+:s2_intg_latest_data_staging: {s2_intg_latest_docs}/data_staging.html
+
 // --------------- RM ----------------
 
 :s2_rm_releases: {s2_specs}/releases/RM/{rm_release}
@@ -347,7 +357,7 @@
 :snomed_ct: {snomed}
 :snomed_doc_home: {https://confluence.ihtsdotools.org/display}
 :snomed_uris: {snomed_doc_home}/DOCURI/URI+Standard
-:snomed_comp_grammar: {snomed_doc_home}/DOCSCG/Compositional+Grammar+-+Specification+and+Guide
+:snomed_comp_grammar: {snomed_doc_home}/SLPG/SNOMED+CT+Compositional+Grammar
 
 :linkehr: http://linkehr.com 
 :loinc: http://loinc.org
