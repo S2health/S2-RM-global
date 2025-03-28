@@ -18,7 +18,8 @@ USAGE="${0} [-nfuhrptv] [-m pub_hom_dir] [-l release] [component names]: generat
   -f : force document regeneration
   -n : turn off default directory pattern ${def_dir_leader}
   -u : force UML regeneration
-  -h : output this help										
+  -h : output this help
+  -k : keep (previous) output, i.e. don't delete
   -r : use remote CSS file location from website
   -p : generate PDF as well								
   -q : generate class name files qualified by package names
@@ -95,7 +96,7 @@ run_asciidoctor () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} -r asciidoctor-bibtex --out-file=$out_file $3
+	asciidoctor ${opts} -r asciidoctor-bibtex  -r asciidoctor-diagram -r asciidoctor-tabs --out-file=$out_file $3
 		
 	echo generated $(pwd)/$out_file
 }
@@ -148,7 +149,7 @@ run_asciidoctor_pdf () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} -r asciidoctor-pdf -b pdf -r asciidoctor-bibtex --out-file=$out_file $3
+	asciidoctor ${opts} -r asciidoctor-pdf -b pdf -r asciidoctor-bibtex -r asciidoctor-diagram --out-file=$out_file $3
 	echo generated $(pwd)/$out_file
 }
 
@@ -206,7 +207,7 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "fhnpqrtuvwm:l:" o; do
+while getopts "fhnpqrtuvwkm:l:" o; do
     case "${o}" in
         n)
             dir_leader=""
@@ -216,6 +217,9 @@ while getopts "fhnpqrtuvwm:l:" o; do
             ;;
         u)
             uml_force_generate=true
+            ;;
+        k)
+            keep_output=true
             ;;
         r)
             use_remote_resources=true
@@ -351,8 +355,10 @@ for component in "${component_list[@]}"; do
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
 		]]; then
-			rm -f docs/UML/classes/*.*
-			rm -f docs/UML/diagrams/*.*
+		  if [[ "$keep_output" != true ]]; then
+        rm -f docs/UML/classes/*.*
+        rm -f docs/UML/diagrams/*.*
+      fi
 
 			echo "$uml_regen_cmd"
 			eval "$uml_regen_cmd"
