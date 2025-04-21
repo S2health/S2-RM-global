@@ -9,6 +9,7 @@
 // --------------- BASE ----------------
 :s2_base_releases: {s2_specs}/releases/S2-RM-BASE/{base_release}
 :s2_base_releases_docs: {s2_base_releases}/docs
+:s2_base_releases_uml: {s2_base_releases_docs}/UML/diagrams
 
 :s2_base_model_support: {s2_base_releases_docs}/model_support.html
 :s2_base_foundation_types: {s2_base_releases_docs}/foundation_types.html
@@ -47,12 +48,16 @@
 :s2_entity_releases: {s2_specs}/releases/S2-RM-ENTITY/{rm_release}
 :s2_entity_releases_docs: {s2_entity_releases}/docs
 
-:s2_entity_entity: {s2_entity_releases_docs}/entity.html
+:s2_entity_overview: {s2_entity_releases_docs}/entity_overview.html
+:s2_entity_social_entity: {s2_entity_releases_docs}/social_entity.html
+:s2_entity_physical_entity: {s2_entity_releases_docs}/physical_entity.html
 
 // for link in preface part of docs
 :s2_entity_latest: {s2_specs}/releases/S2-RM-ENTITY/dev
 :s2_entity_latest_docs: {s2_entity_latest}/docs
-:s2_entity_latest_entity: {s2_entity_latest_docs}/entity.html
+:s2_entity_latest_entity_overview: {s2_entity_latest_docs}/entity_overview.html
+:s2_entity_latest_social_entity: {s2_entity_latest_docs}/social_entity.html
+:s2_entity_latest_physical_entity: {s2_entity_latest_docs}/physical_entity.html
 
 
 // --------------- INTG ----------------

@@ -8,7 +8,7 @@
 2+^|{s2_website_url}[{org_name}^] is an independent, non-profit foundation.
 
 |*Licence*
-|image:{cc_licence_img}[image] {cc_licence_text} {cc_licence_url}
+|image:{cc_licence_img}[CC-BY-ND,88,31] {cc_licence_text} {cc_licence_url}
 
 |*Support*
 |Issues: {component_prs}[Report an Issue^] +

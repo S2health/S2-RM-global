@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script will run asciidoctor on documents found under a directory structure
-# which is by default specifications-XX/docs/xxxx, or with the -n option, just
+# which is by default {product_name}}-{component_root}}-XX/docs/xxxx, or with the -n option, just
 # dddd/docs/xxxx.
 
 #
